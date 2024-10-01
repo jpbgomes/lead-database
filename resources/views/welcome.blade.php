@@ -66,7 +66,7 @@
                     </div>
                 </div>
 
-                <div class="w-full bg-lightblack flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-10 p-3 rounded-lg">
+                {{-- <div class="w-full bg-lightblack flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-10 p-3 rounded-lg">
                     <div class="flex items-center gap-5">
                         <img src="works/diamond.png" alt="Diamond Shop" class="w-[60px]">
 
@@ -82,11 +82,11 @@
                             href="https://diamond.syloxmedia.com" target="_blank">Test Shop<i
                                 class="fa-solid fa-gem"></i></x-cbutton>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </x-container>
 
-        <x-container class="flex flex-col items-center my-40">
+        <x-container class="flex flex-col items-center mt-40 mb-10 sm:mb-40">
             <x-title>my <span class="text-white">path</span> into the <span class="text-white">tech and business</span>
                 world.</x-title>
 
@@ -120,21 +120,19 @@
                         <h2 class="text-start text-2xl">Age 10</h2>
                         <h1 class="text-start text-md text-neutral-200">Started a Bracelet Business at School (Ended by
                             Principal)</h1>
-                        <a href="/works/bracelet.jpg"
+                        <a href="/works/bracelet.jpg" target="_blank"
                             class="flex items-center gap-2 px-3 py-1 border border-neutral-500 text-neutral-200 hover:bg-neutral-700 text-sm">Learn
                             More</a>
 
                     </div>
 
-                    <div
-                        class="w-full flex flex-col items-start justify-center gap-5 sm:gap-3 bg-neutral-800 p-3 sm:p-5 rounded-lg h-60 sm:h-40 mt-32">
-                        <h2 class="text-start text-2xl">Age 15</h2>
-                        <h1 class="text-start text-md text-neutral-200">Built and Launched a Mini Satellite (CanSat
-                            Junior)</h1>
-                        <a href="https://www.esero.pt/592/Reveja-a-Final-da-1---edi--o-do-CanSat-Jr"
-                            class="flex items-center gap-2 px-3 py-1 border border-neutral-500 text-neutral-200 hover:bg-neutral-700 text-sm">Learn
-                            More</a>
-                    </div>
+                    <div class="w-full flex flex-col items-start justify-center gap-3 sm:gap-5 bg-neutral-800 p-5 sm:p-3 rounded-lg h-40 sm:h-60 mt-32">
+                        <h2 class="text-start text-2xl text-neutral-100">Age 15</h2>
+                        <p class="text-start text-md text-neutral-200">Team project: Built, programmed, and launched a mini satellite (CanSat Junior).</p>
+                        <a href="https://www.esero.pt/592/Reveja-a-Final-da-1---edi--o-do-CanSat-Jr" target="_blank"
+                            class="flex items-center gap-2 px-3 py-1 border border-neutral-500 text-neutral-200 hover:bg-neutral-700 text-sm"
+                            aria-label="Learn more about the CanSat Junior project">Learn More</a>
+                    </div>                    
 
                     <a href="{{ route('login') }}">
                         <div
