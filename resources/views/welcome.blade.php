@@ -28,7 +28,7 @@
             </div>
 
             <div class="w-full flex flex-col items-center gap-3">
-                <div class="w-full bg-lightblack flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-10 p-3 rounded-lg">
+                {{-- <div class="w-full bg-lightblack flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-10 p-3 rounded-lg">
                     <div class="flex items-center gap-5">
                         <img src="works/nortada.png" alt="Nortada de Sabores" class="w-[60px]">
 
@@ -45,7 +45,7 @@
                             href="https://nortadadesabores.com" target="_blank">Learn More <i
                                 class="fa-solid fa-utensils"></i></x-cbutton>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="w-full bg-lightblack flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-10 p-3 rounded-lg">
                     <div class="flex items-center gap-5">
