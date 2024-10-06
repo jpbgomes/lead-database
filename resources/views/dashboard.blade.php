@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="py-12 min-h-screen">
-        @if ($tab === 'clients')
+        {{-- @if ($tab === 'clients')
             @livewire('manage-clients')
-        @endif
+        @endif --}}
     </div>
 </x-app-layout>

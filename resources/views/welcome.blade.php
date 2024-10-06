@@ -11,19 +11,19 @@
                 <a target="_blank"
                     class="flex items-center justify-center transition-all hover:bg-neutral-800 px-2 py-1 gap-2 bg-lightblack text-white rounded-xl text-sm"
                     href="https://github.com/jpbgomes">
-                    <img src="icons/github.png" alt="" class="w-6 h-6">@jpbgomes
+                    <img src="logos/github.png" alt="" class="w-6 h-6">@jpbgomes
                 </a>
 
                 <a target="_blank"
                     class="flex items-center justify-center transition-all hover:bg-neutral-800 px-2 py-1 gap-2 bg-lightblack text-white rounded-xl text-sm"
                     href="https://www.linkedin.com/in/jpbgomes">
-                    <img src="icons/linkedin.png" alt="" class="w-6 h-6">@jpbgomes
+                    <img src="logos/linkedin.png" alt="" class="w-6 h-6">@jpbgomes
                 </a>
 
                 <a target="_blank"
                     class="flex items-center justify-center transition-all hover:bg-neutral-800 px-2 py-1 gap-2 bg-lightblack text-white rounded-xl text-sm"
                     href="https://www.youtube.com/@jpbgomes">
-                    <img src="icons/youtube.png" alt="" class="w-6 h-6">@jpbgomes
+                    <img src="logos/youtube.png" alt="" class="w-6 h-6">@jpbgomes
                 </a>
             </div>
 

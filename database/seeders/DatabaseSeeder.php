@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             NewsletterSeeder::class,
-            ClientSeeder::class,
         ]);
     }
 }
