@@ -17,32 +17,49 @@ class BackupDatabase extends Command
         $backupFile = 'backup_' . date('Y-m-d_H-i-s') . '.sql';
         $backupPath = storage_path('app/' . $backupFile);
         $timestamp = date('Y-m-d H:i:s');
-        $databaseName = env('DB_DATABASE');
+
+        $databaseName = config('database.connections.mysql.database');
+        $databaseUser = config('database.connections.mysql.username');
+        $databasePassword = config('database.connections.mysql.password');
+        $databaseHost = config('database.connections.mysql.host');
 
         $command = sprintf(
-            'mysqldump --user=%s --password=%s --host=%s %s > %s',
-            env('DB_USERNAME'),
-            env('DB_PASSWORD'),
-            env('DB_HOST'),
-            $databaseName,
-            $backupPath
+            'mysqldump --user=%s --password=%s --host=%s %s 2>&1 > %s',
+            escapeshellarg($databaseUser),
+            escapeshellarg($databasePassword),
+            escapeshellarg($databaseHost),
+            escapeshellarg($databaseName),
+            escapeshellarg($backupPath)
         );
 
-        system($command);
+        $output = null;
+        $resultCode = null;
+        exec($command, $output, $resultCode);
 
-        if (!file_exists($backupPath)) {
-            $this->error('Falha no backup da base de dados!');
+        if ($resultCode !== 0) {
+            $this->error('Error during database backup: ' . implode("\n", $output));
             return;
         }
 
-        Mail::raw("Ficheiro em anexo do backup da base de dados '{$databaseName}'", function ($message) use ($backupPath, $timestamp) {
+        if (!file_exists($backupPath) || filesize($backupPath) === 0) {
+            $this->error('Failed to create a non-empty database backup file!');
+            return;
+        }
+
+        Mail::raw("Database backup file '{$databaseName}' attached", function ($message) use ($backupPath, $timestamp) {
             $message->to('josepedrogomes27@gmail.com')
-                ->subject("Backup SQL / {$timestamp}")
+                ->subject("SQL Backup / {$timestamp}")
                 ->attach($backupPath);
         });
 
-        $this->info('Backup da base de dados criado e enviado por email com sucesso.');
+        $this->info('Database backup created and emailed successfully.');
 
         unlink($backupPath);
+
+        exec('sudo php artisan config:cache');
+        exec('sudo php artisan view:clear');
+        exec('sudo php artisan config:clear');
+
+        $this->info('Cache and views cleared successfully.');
     }
 }
